@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Gost-styles-for-zotero by romanraspopov</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Gost-styles-for-zotero</h1>
+          <h2></h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/romanraspopov/GOST-styles-for-Zotero/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/romanraspopov/GOST-styles-for-Zotero/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/romanraspopov/GOST-styles-for-Zotero" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <p>Russian GOST 7.0.5-2008 for Zotero style.</p>
+
+<p>За основу были взяты стили Андрея Четверикова с разными видами сортировки (в порядке появления, в алфавитном порядке и с отображением фамилий вместо номеров ссылок), которые прекрасно работали, но не могли обеспечить многих требований ГОСТ 7.0.5-2008 "Библиографическая ссылка", ГОСТ 7.1-2003 "Библиографическая запись и описание" и ГОСТ 7.82-2001 "Библиографическая запись. Библиографическое описание электронных ресурсов". В данном стиле введен большой перечень усовершенствований, который позволил дополнить функционал стилей А. Четверикова.</p>
+
+<p>Теперь стиль решает следующие задачи в соответствии с требованиями ГОСТов:</p>
+
+<ul>
+<li>Сортировка библиографии:
+а) по языку (сначала русскоязычные, затем иностранные), а затем в алфавитном порядке; - ПО УМОЛЧАНИЮ (для выбора другого варианта см. последний блок стиля между тегами)
+б) в порядке появления ссылок;
+в) в хронологическом порядке.</li>
+<li>Локализация стандартных обозначений ([et al.] / [и др.]; Vol. / Т.; P. / С. и другие), которые зависят от поля "Язык" ("Language"): для русскоязычных пусто, для иностранных "en" (без ковычек).</li>
+<li>Разделение областей описания знаками ". –" (точка и тире).<br>
+</li>
+<li>Учет количества авторов:
+    - Для 1-3 авторов в начале описания указывается первый автор, в области сведений об ответственности указываются все авторы;
+    - Для 4 и более авторов описание начинается с заголовка источника, в области сведений об ответственности указывается первый автор и обозначение [и др.] или [et al.] в зависимости от языка источника.</li>
+<li>Сортировка производится с учетом того, что на первом месте может стоять не фамилия автора, а заглавие источника.</li>
+<li>В программе Zotero используеются следующие виды источников:
+    - Книга (Book) - для книг, многотомных изданий, отдельных томов; 
+    - Раздел книги (Book Section) - для разделов (частей) книг;
+    - Диссертация (Thesis) - для диссертаций и авторефератов диссертаций;
+    - Документ конференции (Conference Paper) - для статей из сборников конференций, трудов и т.п.
+    - Статья из периодики (Journal Article) - для статей из журналов, периодических изданий;
+    - Статья из энциклопедии (Encyclopedia Article)
+    - Газетная статья (Newspaper Article)
+    - Веб-страница (Webpage) - для описания Электронных ресурсов УДАЛЕННОГО доступа
+    - Компьютерная программа (Computer Program) - для описания Электронных ресурсов ЛОКАЛЬНОГО доступа.
+    * - Практически все виды библиографического описания укладываются в эти встроенные типы Zotero.</li>
+</ul><p>Примечания:</p>
+
+<ul>
+<li>Составитель (сост.) в Zotero обозначается как "Редактор серии" (Series Editor).</li>
+<li>В поле Edition (Издание) нужно вводить информацию целиком «как есть», например: «2-е изд.» или «2-е изд. перераб. и доп.» или «2nd edition» – это сделано для возможности корректной обработки иностранных источников.</li>
+<li>Примеры оформлений разных источников и соответствие библиографических терминов и полей Zotero см. в приложении (файл "Приложение - ГОСТ + Zotero.doc").</li>
+</ul><p>Так как возможности локализации в текущей версии Zotero (4.0.8) довольно ограничены, иногда библиографическое описание источников оказывается вынужденно стандартизованным (не всегда можно учесть все нюансы оригинального библиографического описания), а также приходится идти на разного рода ухищрения при использовании полей в программе. Однако результат стоит того - в итоге список литературы автоматически формируется, сортируется и форматируется в соответствии с большинством требований ГОСТ. </p>
+
+<p>Выражаю искреннюю благодарность Андрею Петровичу Фоту за его пособие с очень подробным описанием всех нюансов составления библиографических списков (Фот А.П. Оформление библиографических ссылок на использованные источники в научных работах : методические рекомендации соискателям ученых степеней. – Оренбург: ГОУ «ОГУ», 2005. – 24 с.), а также Андрею Четверикову за разработку основы стилей ГОСТ и их поддержку на сайте (<a href="http://chetvericov.ru/stil-oformleniya-dlya-mendeley-i-zotero-csl-po-gost-r-705-2008">http://chetvericov.ru/stil-oformleniya-dlya-mendeley-i-zotero-csl-po-gost-r-705-2008</a>).</p>
+
+<p>Блог для вопросов и предложений: <a href="http://romanraspopov-gost.blogspot.ru">http://romanraspopov-gost.blogspot.ru</a>
+Файл документации: <a href="https://dl.dropboxusercontent.com/u/95616327/Permanent_files/GOST-for-Zotero-Documentation.zip">https://dl.dropboxusercontent.com/u/95616327/Permanent_files/GOST-for-Zotero-Documentation.zip</a></p>
+        </section>
+
+        <footer>
+          Gost-styles-for-zotero is maintained by <a href="https://github.com/romanraspopov">romanraspopov</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
