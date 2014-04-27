@@ -305,6 +305,19 @@
       <key macro="author-title"/>
       <key variable="issued"/>
     </sort>
+    <!-- Два блока <layout> используются для правильного отображения в ссылке параметра <et al> - на рус. или англ. языке -->
+    <layout locale="en" prefix="[" suffix="]" delimiter="; " page-range-format="">
+      <group delimiter=", ">
+        <text macro="author_short" suffix=""/>
+        <text macro="year-date"/>      
+      </group>
+      <choose>
+        <if variable="locator">
+          <label variable="locator" form="short" prefix=",&#160;" suffix="&#160;"/>
+          <text variable="locator"/>
+        </if>
+      </choose>      
+    </layout>
     <layout prefix="[" suffix="]" delimiter="; " page-range-format="">
       <group delimiter=", ">
         <text macro="author_short" suffix=""/>
