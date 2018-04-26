@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0">
   <info>
-    <title>Russian GOST R 7.0.5-2008 author-date citations with aplhabetic sorting</title>
-    <id>http://www.zotero.org/styles/GOST-R-7.0.5-2008%20author-date%20alphabetic</id>
+    <title>Russian GOST R 7.0.5-2008 numeric citations - alphabetic order</title>
+    <id>http://www.zotero.org/styles/GOST-R-7.0.5-2008%20numeric%20alphabetic</id>
     <link href="" rel="self"/>
     <author>
       <name>Roman Raspopov</name>
       <email>romanraspopov@gmail.com</email>
       <uri></uri>
     </author>    
-    <category citation-format="author-date"/>
+    <category citation-format="numeric"/>
     <category field="generic-base"/>
-    <updated>2013-06-01T12:00:00+00:00</updated>
+    <updated>2017-07-19T12:00:00+00:00</updated>
     <summary>
     	Russian GOST-2008 style.
       	
@@ -61,6 +61,23 @@
     _______________________________________________________________________________ -->
 
   <locale xml:lang="en">
+    <terms>
+      <term name="et-al"> [et al.]</term>
+      <term name="and others"></term>
+      <term name="page" form="short">p.</term>
+      <term name="number-of-pages" form="short">p.</term>
+      <term name="number-of-volumes" form="short">vols.</term>
+      <term name="note" form="long"></term>
+      <term name="note" form="short"></term>
+      <term name="collection-editor" form="short">coll.</term>
+      <term name="editortranslator" form="short">
+        <single>ed. &amp; trans.</single>
+        <multiple>eds. &amp; trans.</multiple>
+      </term>   
+    </terms>
+  </locale>
+
+  <locale xml:lang="de">
     <terms>
       <term name="et-al"> [et al.]</term>
       <term name="and others"></term>
@@ -135,10 +152,10 @@
   <macro name="language-sort"> <!-- Макрос сортировки по полю "Language" (сначала русскоязычные источники, затем иностранные) -->
     <choose>
       <if variable="language">
-        <text value="B000"/>
+        <text variable="language"/>
       </if>
       <else>
-        <text value="A000"/>
+        <text value="AA00"/>
       </else>
     </choose>    
   </macro>
@@ -163,7 +180,6 @@
       <else>
         <names variable="author">
           <name form="short" name-as-sort-order="all" sort-separator="&#160;" delimiter=", " delimiter-precedes-last="always"/>
-          <!-- <et-al term="and others"/> -->
           <substitute>
             <text variable="title"/>
           </substitute>
@@ -302,26 +318,13 @@
 Сортировка библиографии в этом случае должна быть в алфавитном порядке.
 Для включения этого вида форматирования расскомментировать этот блок, закомментировать следующий (для нумерованных ссылок).-->
 
-
+<!--
   <citation et-al-min="4" et-al-use-first="1" disambiguate-add-year-suffix="true" collapse="year" et-al-subsequent-use-first="1" disambiguate-add-names="false" disambiguate-add-givenname="false">
     <sort>
       <key macro="language-sort"/>
       <key macro="author-title"/>
       <key variable="issued"/>
     </sort>
-    <!-- Два блока <layout> используются для правильного отображения в ссылке параметра <et al> - на рус. или англ. языке -->
-    <layout locale="en" prefix="[" suffix="]" delimiter="; " page-range-format="">
-      <group delimiter=", ">
-        <text macro="author_short" suffix=""/>
-        <text macro="year-date"/>      
-      </group>
-      <choose>
-        <if variable="locator">
-          <label variable="locator" form="short" prefix=",&#160;" suffix="&#160;"/>
-          <text variable="locator"/>
-        </if>
-      </choose>      
-    </layout>
     <layout prefix="[" suffix="]" delimiter="; " page-range-format="">
       <group delimiter=", ">
         <text macro="author_short" suffix=""/>
@@ -334,12 +337,11 @@
         </if>
       </choose>      
     </layout>
-  </citation> 
+  </citation> -->
 
 <!-- Формат цитат для нумерованных ссылок вида [1] или [1, с. 55].
 Для включения этого вида форматирования расскомментировать этот блок, закомментировать предыдущий (для ссылок вида [Автор, год]).-->
 
-<!--
   <citation et-al-min="4" et-al-use-first="1" collapse="citation-number">
     <sort>
       <key variable="citation-number"/>
@@ -353,7 +355,7 @@
         </if>        
       </choose>      
 	</layout>
-  </citation> -->
+  </citation>
 
 <!--_______________________________________________________________________________
 
@@ -488,17 +490,28 @@
     _______________________________________________________________________________ -->
       <else-if type="webpage">
         <group delimiter=". – " prefix="">
-          <group delimiter=" / ">
+          <group delimiter=" // ">
             <group delimiter=" : ">
               <text macro="author-title" suffix=" [Электронный ресурс]"/>
               <text variable="genre"/>
             </group>
             <group delimiter=" ">
-              <text macro="second-position-authors-only"/>
+              <!--<text macro="second-position-authors-only"/>-->
               <text variable="note"/>
             </group>            
           </group>            
-          <text variable="URL" prefix="Режим доступа: "/>
+          <group delimiter=" ">
+            <text variable="URL" prefix="URL: "/>
+            <choose>
+      		  <if variable="accessed">
+        	    <date variable="accessed" delimiter="." prefix="(дата обращения: " suffix=")">
+          		  <date-part name="day" form="numeric-leading-zeros"/>
+          		  <date-part name="month" form="numeric-leading-zeros"/>
+          		  <date-part name="year" form="long"/>
+        	    </date>
+      		  </if>
+    	    </choose>
+    	  </group>
         </group>
       </else-if>
 <!--_______________________________________________________________________________
@@ -541,11 +554,7 @@
       <key macro="language-sort"/> <!-- Сортировка по полю "Language" (сначала русскоязычные источники, затем иностранные) -->
       <key macro="author-title"/>
       <key variable="issued"/>
-    </sort>
-
-    <layout locale="en" suffix=".">
-      <text macro="bibliography"/>
-    </layout>
+    </sort>       
 
     <layout suffix=".">
       <text macro="bibliography"/>
