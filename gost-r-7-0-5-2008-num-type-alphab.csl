@@ -162,18 +162,18 @@
 
   <macro name="type-sort"> <!-- Макрос сортировки по типу источника и полю "Language" (Порядок таков: 1. Нормативные акты (в Zotero тип "Закон" и "Газетная статья""); 2. Книги; 3. Статьи из журналов, сборников конференций, авторефераты и диссертации; 4. Иностранные источники; 5. Интернет-источники; 6. Все остальные) -->
     <choose>
-      <if type="legislation article-newspaper" match="any">
-        <text value="1"/>
+      <if variable="language"><!-- Если в поле "Langiage" не пусто, то источник считается иностранным -->
+        <text value="4"/>
       </if>
+      <else-if type="legislation article-newspaper" match="any">
+        <text value="1"/>
+      </else-if>
       <else-if type="book">
         <text value="2"/>
       </else-if> 
       <else-if type="thesis paper-conference entry-encyclopedia article-journal article-magazine" match="any">
         <text value="3"/>
-      </else-if>     
-      <else-if variable="language"><!-- Если в поле "Langiage" не пусто, то источник считается иностранным -->
-        <text value="4"/>
-      </else-if>
+      </else-if>      
       <else-if type="webpage">
         <text value="5"/>
       </else-if>
