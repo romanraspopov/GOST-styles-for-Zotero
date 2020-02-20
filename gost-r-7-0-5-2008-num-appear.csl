@@ -1,21 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0">
   <info>
-    <title>Russian GOST R 7.0.5-2008 numeric citations - appearance order</title>
+    <title>ГОСТ Р 7.0.5-2008 Ссылки [цифровые]: в порядке упоминания</title>
     <id>http://www.zotero.org/styles/GOST-R-7.0.5-2008%20numeric%20appearance</id>
     <link href="" rel="self"/>
     <author>
-      <name>Roman Raspopov</name>
+      <name>Roman Raspopov, Рычков В.А.</name>
       <email>romanraspopov@gmail.com</email>
       <uri></uri>
     </author>    
     <category citation-format="numeric"/>
     <category field="generic-base"/>
-    <updated>2014-09-21T12:00:00+00:00</updated>
+    <updated>2018-09-28</updated>
     <summary>
-      Russian GOST-2008 style.
+		Russian GOST-2008 style.
+
+		Дополнение Рычкова. Добавлено "Дата обращения" у источников с сайтов.
         
-      За основу были взяты стили Андрея Четверикова с разными видами сортировки (в порядке появления источников, в алфавитном порядке и с отображением фамилий вместо номеров ссылок в тексте), которые прекрасно работали, но не могли обеспечить многих требований ГОСТ 7.0.5-2008 "Библиографическая ссылка", ГОСТ 7.1-2003 "Библиографическая запись и описание" и ГОСТ 7.82-2001 "Библиографическая запись. Библиографическое описание электронных ресурсов". В данном стиле введен большой перечень усовершенствований, который позволил дополнить функционал стилей А. Четверикова.
+		За основу были взяты стили Андрея Четверикова с разными видами сортировки (в порядке появления источников, в алфавитном порядке и с отображением фамилий вместо номеров ссылок в тексте), которые прекрасно работали, но не могли обеспечить многих требований ГОСТ 7.0.5-2008 "Библиографическая ссылка", ГОСТ 7.1-2003 "Библиографическая запись и описание" и ГОСТ 7.82-2001 "Библиографическая запись. Библиографическое описание электронных ресурсов". В данном стиле введен большой перечень усовершенствований, который позволил дополнить функционал стилей А. Четверикова.
 
       Теперь стиль решает следующие задачи в соответствии с требованиями ГОСТов:
       - Сортировка библиографии (для каждого вида сортировки нужно установить отдельный файл *.csl):
@@ -60,39 +62,53 @@
   </info>
 
 <!--_______________________________________________________________________________
-
     ___________________________ ЛОКАЛИЗАЦИЯ ТЕРМИНОВ ______________________________
-
     _______________________________________________________________________________ -->
 
   <locale xml:lang="en">
     <terms>
-      <term name="et-al"> [et al.]</term>
+      	<term name="application" form="long">application</term>
+	<term name="Assembly-of-laws">Assembly of laws</term>
+	<term name="article" form="short">art.</term>
+      	<term name="et-al"> [et al.]</term>
       <term name="and others"></term>
       <term name="page" form="short">p.</term>
+      <term name="number" form="short">#</term>
       <term name="number-of-pages" form="short">p.</term>
       <term name="number-of-volumes" form="short">vols.</term>
       <term name="note" form="long"></term>
       <term name="note" form="short"></term>
       <term name="collection-editor" form="short">coll.</term>
-      <term name="editortranslator" form="short">
-        <single>ed. &amp; trans.</single>
-        <multiple>eds. &amp; trans.</multiple>
-      </term>   
+      <term name="Computer-program-state-registration-certificate" form="long">Computer program state registration certificate</term>
+      <term name="Database-stat-registration-certificate" form="long">Database program state registration certificate</term>
+      	<term name="editortranslator" form="short">
+        	<single>ed. &amp; trans.</single>
+       	 	<multiple>eds. &amp; trans.</multiple>
+     	 </term>   
+      	<term name="date-received" form="long">date received</term>
+      	<term name="registration-date" form="long">registration date</term>
+	<term name="from_date">from</term>
+	
     </terms>
   </locale>
 
   <locale xml:lang="ru">
     <terms>
+      	<term name="application" form="long">Заявка</term>
+	<term name="Assembly-of-laws">Собрание законодательства РФ</term>
+	<term name="article" form="short">ст.</term>
       <term name="et-al"> [и др.]</term>
       <term name="and others"></term>
       <term name="page" form="short">с.</term>
+      <term name="number" form="short">№</term>
       <term name="number-of-pages" form="short">с.</term>
       <term name="number-of-volumes" form="short">т.</term>
       <term name="note" form="long"></term>
       <term name="note" form="short"></term>
       <term name="collection-editor" form="short">сост.</term>
       <term name="collection-number" form="short">вып.</term>
+      <term name="Computer-program-state-registration-certificate" form="long">Свидетельство о государственной регистрации программы для ЭВМ</term>
+      <term name="Database-state-registration-certificate" form="long">Свидетельство о государственной регистрации базы данных</term>
       <term name="translator" form="short">
         <single>пер.</single>
         <multiple>пер.</multiple>
@@ -101,7 +117,8 @@
         <single>ред. и пер.</single>
         <multiple>ред. и пер.</multiple>
       </term>     
-
+      <term name="date-received" form="long">Дата поступления</term>
+      <term name="registration-date" form="long">Зарегистрировано в Реестре программ для ЭВМ</term>
       <!-- SHORT MONTH FORMS -->
       <term name="month-01" form="short">янв.</term>
       <term name="month-02" form="short">февр.</term>
@@ -115,6 +132,7 @@
       <term name="month-10" form="short">окт.</term>
       <term name="month-11" form="short">нояб.</term>
       <term name="month-12" form="short">дек.</term>
+	<term name="from_date">от</term>
     </terms>
   </locale>
 
@@ -149,9 +167,7 @@
   </macro>
 
 <!--_______________________________________________________________________________
-
     _____________________________________ АВТОРЫ __________________________________
-
     _______________________________________________________________________________ -->
 
   <macro name="author_short"> <!-- Макрос для ненумерованных ссылок вида [Иванов, 2013] -->
@@ -219,9 +235,7 @@
   </macro>
 
 <!--_______________________________________________________________________________
-
     _________________________ ВСПОМОГАТЕЛЬНЫЕ МАКРОСЫ _____________________________
-
     _______________________________________________________________________________ -->
 
   <macro name="citation-number">
@@ -297,9 +311,7 @@
   </macro>
   
 <!--_______________________________________________________________________________
-
     ______________________________ ССЫЛКИ В ТЕКСТЕ ________________________________
-
     _______________________________________________________________________________ -->
 
 <!-- Формат цитат для ненумерованных ссылок вида [Иванов, 2013] или [Иванов, 2013, с. 55].
@@ -346,9 +358,7 @@
   </citation>
 
 <!--_______________________________________________________________________________
-
     ________________________________ БИБЛИОГРАФИЯ _________________________________
-
     _______________________________________________________________________________ -->
 
   <macro name="bibliography">
@@ -501,6 +511,109 @@
     	    </choose>
     	  </group>
         </group>
+      </else-if>
+<!--_______________________________________________________________________________
+    ___________ Свидетельство о регистрации ПрЭВМ ___________________________
+    _______________________________________________________________________________ -->
+      <else-if type="patent">
+	<group delimiter=" ">
+		<!--Тип документа, номер. -->
+		<group delimiter=" " suffix=".">
+	    		<choose>
+				<!--Если заполнено поле "примечания", то считается БД, иначе ПрЭВМ. -->
+      		  		<if variable="note">
+        	  			<text term="Database-state-registration-certificate"/>
+      		  		</if>
+		  		<else>
+    					<text term="Computer-program-state-registration-certificate"/>
+  		  		</else>
+    	    		</choose>
+	    		<text term="number" form="short"/>
+	    		<text variable="number"/>
+		</group>
+		<!--Заголовок. -->
+		<group>
+           		<text variable="title"/>
+        	</group>
+		<!--Список авторов. -->
+		<group prefix="/ " suffix=". – ">
+        		<text macro="second-position-authors-only"/>
+        	</group>
+		<!--омер заявки. -->
+		<group delimiter=" " suffix=".">
+			<text term="application" form="long"/>
+			<text term="number" form="short"/>
+	 		<text variable="call-number"/>
+		</group>
+		<!--Дата получения заявки. -->
+		<group delimiter=" " suffix=".">
+			<text term="date-received" form="long"/>
+			<choose>
+      		 		<if variable="submitted">
+        	    			<date variable="submitted" delimiter=".">
+          		  			<date-part name="day" form="numeric-leading-zeros"/>
+          		  			<date-part name="month" form="numeric-leading-zeros"/>
+          		  			<date-part name="year" form="long"/>
+        	    			</date>
+      		  		</if>
+    	    		</choose>
+		</group>
+		<!--Дата регистрации в реестре. -->
+		<group delimiter=" " suffix=".">
+			<text term="registration-date" form="long"/>
+			<choose>
+      		 		<if variable="issued">
+        	    			<date variable="issued" delimiter=".">
+          		  			<date-part name="day" form="numeric-leading-zeros"/>
+          		  			<date-part name="month" form="numeric-leading-zeros"/>
+          		  			<date-part name="year" form="long"/>
+        	    			</date>
+      		  		</if>
+    	    		</choose>
+		</group>
+	</group>
+      </else-if>
+<!--_______________________________________________________________________________
+    ___________ Нормативно-правовой акт ___________________________
+    _______________________________________________________________________________ -->
+      <else-if type="legislation">
+	<group delimiter=" ">
+		<!--Тип документа, номер. -->
+		<group delimiter=" ">
+	    		<text variable="note"/>
+			<text term="from_date" form="short"/>
+			<date variable="accessed" delimiter=".">
+          			<date-part name="day" form="numeric-leading-zeros"/>
+          		  	<date-part name="month" form="numeric-leading-zeros"/>
+          		  	<date-part name="year" form="long"/>
+        	    	</date>
+			<text term="number" form="short"/>
+			<text variable="number"/>
+		</group>
+		<!--Заголовок. -->
+		<group delimiter=" "  prefix="«" suffix="» //">
+	    		<text variable="title"/>
+		</group>
+
+		<group delimiter=". - ">
+           		<text term="Assembly-of-laws"/>
+			<date variable="issued" delimiter=".">
+          			<date-part name="day" form="numeric-leading-zeros"/>
+          		  	<date-part name="month" form="numeric-leading-zeros"/>
+          		  	<date-part name="year" form="long"/>
+        	    	</date>
+			<group delimiter=" " >
+				<text term="number" form="short"/>
+	    			<text variable="section"/>
+			</group>
+			<group delimiter=" " >
+				<text term="article" form="short"/>
+	    			<text variable="volume"/>
+			</group>
+        	</group>
+		
+		
+	</group>
       </else-if>
 <!--_______________________________________________________________________________
     _____________________________ Другие типы источников __________________________
